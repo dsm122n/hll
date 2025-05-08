@@ -1,0 +1,202 @@
+
+:root {
+    font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+    line-height: 1.5;
+    font-weight: 400;
+  
+    color-scheme: light dark;
+    color: rgba(255, 255, 255, 0.87);
+    background-color: #242424;
+  
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-size: 9pt;
+  }
+  
+  a {
+    font-weight: 500;
+    color: #646cff;
+    text-decoration: inherit;
+  }
+  a:hover {
+    color: #535bf2;
+  }
+  
+  body {
+    margin: 0;
+    display: flex;
+    min-width: 320px;
+    min-height: 100vh;
+  
+  }
+  
+  h1 {
+    font-size: 3.2em;
+    line-height: 1.1;
+    text-align: left;
+    margin: 0.5em;
+  }
+  
+  button {
+    border-radius: 8px;
+    border: 1px solid transparent;
+    padding: 0.6em 1.2em;
+    font-size: 1em;
+    font-weight: 500;
+    font-family: inherit;
+    background-color: #1a1a1a;
+    cursor: pointer;
+    transition: border-color 0.25s;
+  }
+  button:hover {
+    border-color: #646cff;
+    background-color: #a3f5f2;
+    color: #646cff;
+  ;
+  }
+  button:focus,
+  button:focus-visible {
+    outline: 4px auto -webkit-focus-ring-color;
+  }
+  
+  
+  
+  #app {
+    max-width: 1280px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 2rem;
+  
+  }
+  
+  @media (prefers-color-scheme: light) {
+    :root {
+      color: #213547;
+      background-color: #f6f6f6;
+    }
+    a:hover {
+      color: #747bff;
+    }
+    button {
+      background-color: #ffffff;
+      color: #213547;
+      border-color: #213547;
+    }
+    .eliminar-columnas{
+      color: #000000;
+    }
+  }
+  
+@media print {
+    
+    table {
+        page-break-inside: auto;
+        font-size: 9pt;
+        background-color: #ffffff;
+        color: #000000;
+        border-collapse: separate;
+        border-spacing: 0;
+        margin: 0; /* Adjust margins to be stretched */
+        width: 100%; /* Ensure the table stretches to full width */
+    }
+
+    thead {
+        display: table-header-group; /* Ensure thead repeats on each page */
+        position: sticky;
+    }
+    tbody tr {
+        page-break-inside: avoid; /* Allow rows to break across pages */
+    }
+    th, td {
+        border: 0.5px solid black;
+        background-color: #ffffff;
+        color: #000000;
+    }
+    .eliminar-columnas {
+        visibility: hidden;
+    }
+    @supports (display: grid) {
+        .vertical {
+          display: grid;
+          grid-template-columns: max-content;
+          grid-template-areas: "head body";
+        }
+        .vertical thead {
+          grid-area: head;
+        }
+        .vertical tbody {
+          grid-area: body;
+        }
+      }
+      
+      .vertical thead {
+        display: flex;
+        flex-shrink: 0;
+        min-width: max-content;
+      }
+      .vertical tbody {
+        display: flex;
+        min-width: max-content;
+      
+      }
+      .vertical tr {
+        display: flex;
+        flex-direction: column;
+        min-width: min-content;
+        flex-shrink: 0;
+      }
+      .vertical td, .vertical th {
+        display: block;
+        padding: 0 1em 0 1em;
+          min-width: max-content;
+          min-height: 1.5em; /* Set a minimum height for table cells */
+      }
+      
+      .table-container {
+        overflow-x: auto;
+        width: 100%;
+      }
+      
+      table { 
+          border-collapse: collapse; 
+      }
+      table td {
+        border: 1px solid black; 
+      }
+      table th {
+          text-wrap: false;
+          
+        border: 1px solid black;
+        background-color: #ffc800;
+        color: rgb(0, 0, 0);
+        text-align: left;
+      }
+      table tr:nth-child(10n), tr:nth-child(10n-1), tr:nth-child(10n-2), tr:nth-child(10n-3), tr:nth-child(10n-4) {
+        background-color: #d2d2d2;
+        color: #000;
+      }
+      
+      
+      
+      .highlight-row {
+        background-color: #ffa2e577; 
+      }
+      
+      .highlight-col {
+        background-color: #00ffbb33; 
+      }
+      
+      @media (preffers-color-scheme: light) {
+        .highlight-row {
+          background-color: #ff77d877; 
+        }
+      
+        .highlight-col {
+          background-color: #1ff0b833; 
+        }
+      }
+      
+
+}
